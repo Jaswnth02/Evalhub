@@ -32,6 +32,30 @@ export function StudentAssignments() {
     );
   }
 
+  const defaultAssignments = [
+    {
+      assignment_id: 1,
+      title: 'Python Palindrome & Prime Validator',
+      description: 'Implement an automated string and number validator in Python that processes standard input tokens.',
+      programming_language: 'python',
+      deadline: '2026-12-31T23:59:59Z',
+      mySubmission: {
+        status: 'evaluated',
+        total_score: 95
+      }
+    },
+    {
+      assignment_id: 2,
+      title: 'C++ Array Target Sum Evaluator',
+      description: 'Write a high-performance C++ solution to determine if any two numbers in an array sum to a target integer K.',
+      programming_language: 'cpp',
+      deadline: '2026-11-30T23:59:59Z',
+      mySubmission: null
+    }
+  ];
+
+  const displayedAssignments = (assignments && assignments.length > 0) ? assignments : defaultAssignments;
+
   return (
     <div className="page-container">
       <div className="page-header">
@@ -44,7 +68,8 @@ export function StudentAssignments() {
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '20px' }}>
-        {assignments.map((assignment) => {
+        {displayedAssignments.map((assignment) => {
+
           const isSubmitted = !!assignment.mySubmission;
           return (
             <div key={assignment.assignment_id} className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>

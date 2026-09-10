@@ -2,8 +2,18 @@
 **Project ID:** 2026MIN314  
 **Project Type:** Individual Mini Project – Full Stack Web Development  
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-6366f1?style=for-the-badge&logo=github)](https://jaswnth02.github.io/Evalhub/)
+[![React](https://img.shields.io/badge/React-18-blue?style=flat&logo=react)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-8-purple?style=flat&logo=vite)](https://vitejs.dev)
+[![Node.js](https://img.shields.io/badge/Node.js-20+-green?style=flat&logo=node.js)](https://nodejs.org)
+[![License](https://img.shields.io/badge/License-Academic_Evaluation-orange?style=flat)](#)
+
+> 🌐 **Live Web Preview**: [https://jaswnth02.github.io/Evalhub/](https://jaswnth02.github.io/Evalhub/)  
+> Anyone can click the live link and test the complete system (Student, Faculty, and Admin portals) with instant 1-click demo logins!
+
 > **Academic Positioning:**  
 > A lightweight, customizable, and secure full-stack academic project evaluation platform that integrates automated untrusted code compilation and execution with source-code similarity detection and density-based collusion clustering.
+
 
 ---
 
