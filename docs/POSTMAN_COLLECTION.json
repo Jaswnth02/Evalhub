@@ -1,0 +1,118 @@
+{
+  "info": {
+    "name": "Automated Student Project Evaluation Hub API Collection",
+    "_postman_id": "evalhub-2026min314-api-collection",
+    "description": "Postman API test suite for Student Project Evaluation Hub with Plagiarism Detection and Automated Code Execution",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login (Student)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"student.john@evalhub.edu\",\n  \"password\": \"student123\"\n}"
+            },
+            "url": { "raw": "http://localhost:5000/api/auth/login", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "auth", "login"] }
+          }
+        },
+        {
+          "name": "Login (Faculty)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"prof.alan@evalhub.edu\",\n  \"password\": \"faculty123\"\n}"
+            },
+            "url": { "raw": "http://localhost:5000/api/auth/login", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "auth", "login"] }
+          }
+        },
+        {
+          "name": "Get Current User Profile",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "http://localhost:5000/api/auth/me", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "auth", "me"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Assignments",
+      "item": [
+        {
+          "name": "Get All Assignments",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "http://localhost:5000/api/assignments", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "assignments"] }
+          }
+        },
+        {
+          "name": "Get Assignment By ID",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "http://localhost:5000/api/assignments/1", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "assignments", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Submissions",
+      "item": [
+        {
+          "name": "Get Submissions List",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "http://localhost:5000/api/submissions?assignmentId=1", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "submissions"], "query": [{ "key": "assignmentId", "value": "1" }] }
+          }
+        },
+        {
+          "name": "Get Submission By ID",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "http://localhost:5000/api/submissions/1", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "submissions", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Evaluation & Plagiarism",
+      "item": [
+        {
+          "name": "Trigger Evaluation",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "http://localhost:5000/api/evaluation/1", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "evaluation", "1"] }
+          }
+        },
+        {
+          "name": "Get Assignment Plagiarism Matrix & DBSCAN",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "http://localhost:5000/api/plagiarism/assignment/1", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "plagiarism", "assignment", "1"] }
+          }
+        },
+        {
+          "name": "Get Comprehensive Report",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "http://localhost:5000/api/reports/1", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "reports", "1"] }
+          }
+        }
+      ]
+    }
+  ]
+}

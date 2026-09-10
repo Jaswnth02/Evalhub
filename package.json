@@ -1,0 +1,21 @@
+{
+  "name": "automated-student-project-evaluation-hub",
+  "version": "1.0.0",
+  "description": "Automated Student Project Evaluation Hub with Plagiarism Detection and Automated Code Execution - Project ID: 2026MIN314",
+  "scripts": {
+    "init-db": "npm run init-db --prefix backend",
+    "test:backend": "npm test --prefix backend",
+    "start:backend": "npm start --prefix backend",
+    "start:frontend": "npm run dev --prefix frontend",
+    "build:frontend": "npm run build --prefix frontend"
+  },
+  "keywords": [
+    "evaluation",
+    "plagiarism-detection",
+    "code-execution",
+    "academic-evaluation",
+    "dbscan"
+  ],
+  "author": "Academic Development Team",
+  "license": "ISC"
+}
