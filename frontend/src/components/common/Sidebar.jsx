@@ -10,8 +10,12 @@ import {
   Fingerprint, 
   ShieldCheck,
   Code2,
-  Lightbulb,
-  ArrowRight
+  Headphones,
+  ArrowRight,
+  BarChart3,
+  Settings,
+  Globe,
+  CheckSquare
 } from 'lucide-react';
 
 export function Sidebar() {
@@ -94,6 +98,14 @@ export function Sidebar() {
               <Fingerprint size={18} />
               <span>Plagiarism & DBSCAN</span>
             </NavLink>
+            <NavLink to="/faculty/reports" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+              <BarChart3 size={18} />
+              <span>Reports</span>
+            </NavLink>
+            <NavLink to="/faculty/settings" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+              <Settings size={18} />
+              <span>Settings</span>
+            </NavLink>
           </>
         )}
 
@@ -101,7 +113,7 @@ export function Sidebar() {
         {user?.role === 'admin' && (
           <>
             <div className="sidebar-category">
-              Administration
+              ADMINISTRATION
             </div>
             <NavLink to="/admin/dashboard" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
               <LayoutGrid size={18} />
@@ -115,6 +127,26 @@ export function Sidebar() {
               <FileText size={18} />
               <span>All Assignments</span>
             </NavLink>
+            <NavLink to="/admin/submissions" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+              <CheckSquare size={18} />
+              <span>Submissions</span>
+            </NavLink>
+            <NavLink to="/admin/evaluations" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+              <FileCheck2 size={18} />
+              <span>Evaluations</span>
+            </NavLink>
+            <NavLink to="/admin/plagiarism" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+              <Globe size={18} />
+              <span>Plagiarism & DBSCAN</span>
+            </NavLink>
+            <NavLink to="/admin/reports" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+              <BarChart3 size={18} />
+              <span>Reports</span>
+            </NavLink>
+            <NavLink to="/admin/settings" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+              <Settings size={18} />
+              <span>Settings</span>
+            </NavLink>
           </>
         )}
       </nav>
@@ -122,7 +154,7 @@ export function Sidebar() {
       {/* Need Help? Card */}
       <div className="sidebar-help-card">
         <div className="help-icon-circle">
-          <Lightbulb size={16} color="#d97706" />
+          <Headphones size={16} color="#6366f1" />
         </div>
         <div style={{ fontWeight: 700, fontSize: '0.86rem', color: '#0f172a' }}>
           Need Help?
@@ -132,7 +164,7 @@ export function Sidebar() {
         </div>
         <button 
           className="btn-help-center"
-          onClick={() => alert('Student Documentation & Support Hub: Contact support@evalhub.edu for platform assistance.')}
+          onClick={() => alert('Support Hub: Contact support@evalhub.edu for platform assistance.')}
         >
           <span>View Help Center</span>
           <ArrowRight size={12} />

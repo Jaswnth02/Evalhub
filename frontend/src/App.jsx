@@ -36,7 +36,7 @@ function AppLayout() {
       <Sidebar />
       <div className="main-panel">
         <Navbar />
-        <main>
+        <main className="main-content-area">
           <Outlet />
         </main>
       </div>
@@ -183,6 +183,46 @@ export default function App() {
               element={
                 <ProtectedRoute allowedRoles={['admin']}>
                   <AdminAssignments />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/submissions"
+              element={
+                <ProtectedRoute allowedRoles={['admin']}>
+                  <FacultySubmissions />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/evaluations"
+              element={
+                <ProtectedRoute allowedRoles={['admin']}>
+                  <FacultySubmissions />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/plagiarism"
+              element={
+                <ProtectedRoute allowedRoles={['admin']}>
+                  <FacultyPlagiarismHub />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/reports"
+              element={
+                <ProtectedRoute allowedRoles={['admin']}>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/settings"
+              element={
+                <ProtectedRoute allowedRoles={['admin']}>
+                  <AdminDashboard />
                 </ProtectedRoute>
               }
             />

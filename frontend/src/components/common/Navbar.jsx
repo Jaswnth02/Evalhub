@@ -50,7 +50,7 @@ export function Navbar() {
           <Search size={16} color="#94a3b8" />
           <input
             type="text"
-            placeholder="Search projects, assignments, files..."
+            placeholder="Search users, assignments, submissions..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />

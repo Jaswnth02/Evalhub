@@ -15,8 +15,8 @@ export function DashboardCard({ title, value, icon, color = '#6366f1', subtitle 
       </div>
       <div className="stat-info">
         <span className="stat-value">{value}</span>
-        <span className="stat-label">{title}</span>
-        {subtitle && <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '2px' }}>{subtitle}</span>}
+        <span className="stat-label" title={title}>{title}</span>
+        {subtitle && <span className="stat-subtitle">{subtitle}</span>}
       </div>
     </div>
   );

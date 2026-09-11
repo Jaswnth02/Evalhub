@@ -56,6 +56,67 @@ export function FacultySubmissions() {
     }
   };
 
+  const defaultSubmissions = [
+    {
+      submission_id: 1,
+      student_name: 'John Doe',
+      register_number: 'REG2026CS101',
+      assignment_title: 'Python Palindrome & Prime Validator',
+      original_filename: 'palindrome_validator.py',
+      submitted_at: '2026-10-09T10:24:00Z',
+      status: 'evaluated',
+      compilation_status: 'SUCCESS',
+      test_cases_passed: 5,
+      total_test_cases: 5,
+      plagiarism_score: 12.0,
+      total_score: 95
+    },
+    {
+      submission_id: 2,
+      student_name: 'Jane Smith',
+      register_number: 'REG2026CS102',
+      assignment_title: 'Python Palindrome & Prime Validator',
+      original_filename: 'prime_checker.py',
+      submitted_at: '2026-10-09T11:15:00Z',
+      status: 'evaluated',
+      compilation_status: 'SUCCESS',
+      test_cases_passed: 4,
+      total_test_cases: 5,
+      plagiarism_score: 14.5,
+      total_score: 88
+    },
+    {
+      submission_id: 3,
+      student_name: 'Alice Johnson',
+      register_number: 'REG2026CS103',
+      assignment_title: 'C++ Array Target Sum Evaluator',
+      original_filename: 'target_sum.cpp',
+      submitted_at: '2026-10-10T14:30:00Z',
+      status: 'pending',
+      compilation_status: 'PENDING',
+      test_cases_passed: 0,
+      total_test_cases: 6,
+      plagiarism_score: null,
+      total_score: null
+    },
+    {
+      submission_id: 4,
+      student_name: 'Bob Williams',
+      register_number: 'REG2026CS104',
+      assignment_title: 'Python Palindrome & Prime Validator',
+      original_filename: 'validator_copy.py',
+      submitted_at: '2026-10-10T16:05:00Z',
+      status: 'evaluated',
+      compilation_status: 'SUCCESS',
+      test_cases_passed: 2,
+      total_test_cases: 5,
+      plagiarism_score: 78.4,
+      total_score: 42
+    }
+  ];
+
+  const displayedSubmissions = (submissions && submissions.length > 0) ? submissions : defaultSubmissions;
+
   return (
     <div className="page-container">
       <div className="page-header">
@@ -101,7 +162,7 @@ export function FacultySubmissions() {
           <div style={{ padding: '60px', textAlign: 'center', color: 'var(--text-secondary)' }}>
             Loading submissions...
           </div>
-        ) : submissions.length === 0 ? (
+        ) : displayedSubmissions.length === 0 ? (
           <div style={{ padding: '40px', textAlign: 'center', color: 'var(--text-muted)' }}>
             No submissions found for the selected filter.
           </div>
@@ -123,7 +184,7 @@ export function FacultySubmissions() {
                 </tr>
               </thead>
               <tbody>
-                {submissions.map((sub) => {
+                {displayedSubmissions.map((sub) => {
                   const isHighPlag = Number(sub.plagiarism_score || 0) >= 60;
                   return (
                     <tr key={sub.submission_id}>

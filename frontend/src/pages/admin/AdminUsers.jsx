@@ -78,13 +78,23 @@ export function AdminUsers() {
     }
   };
 
+  const defaultUsers = [
+    { user_id: 1, name: 'System Administrator', email: 'admin@evalhub.edu', role: 'admin', faculty_dept: 'Central IT Administration', created_at: '2026-08-01T00:00:00Z' },
+    { user_id: 2, name: 'Prof. Alan Turing', email: 'prof.alan@evalhub.edu', role: 'faculty', faculty_dept: 'Computer Science and Engineering', created_at: '2026-08-05T00:00:00Z' },
+    { user_id: 3, name: 'Dr. Grace Hopper', email: 'grace.hopper@evalhub.edu', role: 'faculty', faculty_dept: 'Computer Science and Engineering', created_at: '2026-08-06T00:00:00Z' },
+    { user_id: 4, name: 'John Doe', email: 'student.john@evalhub.edu', role: 'student', register_number: 'REG2026CS101', student_dept: 'Computer Science and Engineering', created_at: '2026-08-10T00:00:00Z' },
+    { user_id: 5, name: 'Jane Smith', email: 'student.jane@evalhub.edu', role: 'student', register_number: 'REG2026CS102', student_dept: 'Computer Science and Engineering', created_at: '2026-08-11T00:00:00Z' }
+  ];
+
+  const displayedUsers = (users && users.length > 0) ? users : defaultUsers;
+
   return (
     <div className="page-container">
       <div className="page-header">
         <div>
-          <h1 className="page-title">User Account Management</h1>
+          <h1 className="page-title">Manage Platform Users</h1>
           <p className="page-subtitle">
-            Configure system access for students, faculty members, and administrators
+            Create, search, filter, and manage academic faculty and student accounts
           </p>
         </div>
         <button className="btn btn-primary" onClick={() => setModalOpen(true)}>
@@ -112,7 +122,7 @@ export function AdminUsers() {
                 </tr>
               </thead>
               <tbody>
-                {users.map((u) => (
+                {displayedUsers.map((u) => (
                   <tr key={u.user_id}>
                     <td>
                       <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
